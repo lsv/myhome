@@ -19,8 +19,9 @@ if [ -f $GITFILE ]; then
         rm web/config.php
         composer --no-dev --no-scripts install
         npm install
-        gulp
+        node_modules/.bin/gulp
         bin/console --env=prod cache:clear
+        chmod 777 -R var/cache var/logs
         echo "" > $GITFILE
     fi
 fi
