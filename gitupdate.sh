@@ -1,12 +1,12 @@
 #!/bin/bash
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-GITFILE="$DIR/push.log"
+GITFILE="$DIR/var/cache/push.log"
 ACCEPT="PUSH"
 
-cd $DIR
+cd "$DIR"
 
-if [ -f $GITFILE ]; then
+if [ -f "$GITFILE" ]; then
 
     LINE=$(cat "$GITFILE")
 
@@ -22,6 +22,6 @@ if [ -f $GITFILE ]; then
         node_modules/.bin/gulp
         bin/console --env=prod cache:clear
         chmod 777 -R var/cache var/logs
-        echo "" > $GITFILE
+        rm "$GITFILE"
     fi
 fi

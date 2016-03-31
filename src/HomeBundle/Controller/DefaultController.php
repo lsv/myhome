@@ -72,7 +72,7 @@ class DefaultController extends Controller
             }
 
             if ($event instanceof GithubEvent\PushEvent) {
-                $dir = sprintf('%s/../push.log', $this->getParameter('kernel.root_dir'));
+                $dir = sprintf('%s/../push.log', $this->getParameter('kernel.cache_dir'));
                 file_put_contents($dir, 'PUSH');
                 return new Response();
             }
