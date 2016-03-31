@@ -1,0 +1,9 @@
+services:
+    feed.service:
+        class: HomeBundle\Service\FeedService
+        arguments: ["%feedpath%"]
+
+    uuid_extension:
+        class: HomeBundle\Twig\UuidExtension
+        tags:
+            - { name: twig.extension }

@@ -1,0 +1,81 @@
+maxage: "-2d"
+maxitems: 5
+col:
+  Home:
+    -
+      -
+        feed: "http://feeds.tv2.dk/nyhederne_seneste/rss"
+        name: "TV2 nyheder"
+      -
+        feed: "http://feeds.tv2.dk/sporten_seneste/rss"
+        name: "TV2 sporten"
+      -
+        feed: "http://www.wikihow.com/feed.rss"
+        maxitems: 1
+        name: Wikihow
+    -
+      -
+        feed: "http://newz.dk/rss"
+        name: newz.dk
+        maxitems: 5
+      -
+        feed: "https://www.techstart.dk/rssfeed.php"
+        name: techstart
+      -
+        feed: "http://feeds.tv2.dk/beep_seneste/rss"
+        name: "TV2 Beep"
+    -
+      -
+        feed: "https://www.gamereactor.dk/rss/allnewcontent.php"
+        name: Gamereactor.dk
+      -
+        feed: "http://filmz.dk/rss/"
+        name: Filmz
+      -
+        feed: "http://www.pcworld.dk/rss/all"
+        name: PCWorld
+    -
+      -
+        name: Engadget
+        feed: "http://www.engadget.com/rss.xml"
+        maxitems: 3
+      -
+        feed: "http://feeds.feedburner.com/macnyheder/EnxX?format=xml"
+        name: MacNyheder
+      -
+        feed: "http://maczonen.dk/feed/"
+        name: "Maczonen.dk"
+
+  Huff:
+    -
+      -
+        feed: "http://feeds.huffingtonpost.com/c/35496/f/677097/index.rss"
+        name: "Technology"
+      -
+        feed: "http://feeds.huffingtonpost.com/c/35496/f/677091/index.rss"
+        name: "Sports"
+      -
+        feed: "http://feeds.huffingtonpost.com/c/35496/f/677088/index.rss"
+        name: "Science"
+    -
+      -
+        feed: "http://feeds.huffingtonpost.com/c/35496/f/677083/index.rss"
+        name: "New York"
+      -
+        feed: "http://feeds.huffingtonpost.com/c/35496/f/677075/index.rss"
+        name: "Code"
+  Dev:
+    -
+      -
+        feed: "https://davidwalsh.name/feed"
+        name: "David Walsh"
+      -
+        feed: "http://feeds.feedburner.com/CssTricks"
+        name: "CSS Tricks"
+    -
+      -
+        feed: "http://tympanus.net/codrops/feed/"
+        name: "Co Drops"
+      -
+        feed: "https://feeds.feedblitz.com/scotch_io"
+        name: "Scotch"

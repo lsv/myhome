@@ -1,0 +1,57 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+<section>
+    <header>
+        <div class="header">
+            <h1>My Home</h1>
+        </div>
+        <div class="tabs">
+            <ul class="nav nav-tabs">
+                {% for name,tab in feeds.col %}
+                <li class="{% if loop.index == 1 %}active{% endif %}"><a href="#tab-{{ loop.index }}" data-toggle="tab">{{ name }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </header>
+
+    <div class="tab-content">
+        {% for name,columns in feeds.col %}
+            <div class="tab-pane {% if loop.index == 1 %}active{% endif %}" id="tab-{{ loop.index }}">
+                <div class="columns columns-{{ columns|length }}">
+                    {% for column in columns %}
+                        <div>
+                            {% for item in column %}
+                                {% set maxitems = feeds.maxitems %}
+                                {% if item.maxitems is defined %}
+                                    {% set maxitems = item.maxitems %}
+                                {% endif %}
+                                <article class="feed" data-feed="{{ item.feed }}" data-maxitems="{{ maxitems }}" id="{{ uuid4() }}">
+                                    <h2>{{ item.name }}</h2>
+                                    <div class="results">
+                                        <span class="glyphicon glyphicon-refresh spinning"></span>
+                                    </div>
+                                </article>
+                            {% endfor %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
+
+{% block javascripts %}
+    <script id="template" type="text/x-jsrender">
+        <li>
+            <a class="link" onclick="jQuery(this).parent().find('div').toggle()">
+                <i class="glyphicon glyphicon-plus"></i>
+            </a>
+            <span>
+                <a title="{{ "{{:date}}" }}" href="{{ "{{:url}}" }}">{{ "{{:title}}" }}</a>
+            </span>
+            <div>{{ "{{:content}}" }}</div>
+        </li>
+    </script>
+    {{ parent() }}
+{% endblock %}
